@@ -17,8 +17,11 @@ function togglePlay() {
 }
 
 function updateToggle() {
-  const icon = this.paused ? "►" : "❚ ❚";
-  toggle.textContent = icon;
+  if (this.paused) {
+    toggle.textContent = "►";
+  } else {
+    toggle.textContent = "❚ ❚";
+  }
 }
 
 //Event Listeners
