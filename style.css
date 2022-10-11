@@ -55,7 +55,7 @@ body {
 }
 
 .player__button:focus {
-  border-color: #ffc600;
+  border-color: #009dff;
 }
 
 .player__slider {
@@ -99,7 +99,7 @@ body {
 
 .progress__filled {
   width: 50%;
-  background: #ffc600;
+  background: #009dff;
   flex: 0;
   flex-basis: 50%;
 }
