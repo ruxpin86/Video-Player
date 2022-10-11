@@ -30,8 +30,8 @@ function updateToggle() {
 //Volume and playback speed sliders
 function handleRangeUpdate() {
   video[this.name] = this.value;
-  console.log(this.value);
-  console.log(this.name);
+  // console.log(this.value);
+  // console.log(this.name);
 }
 
 //Skip button function
@@ -41,9 +41,16 @@ function skip() {
 }
 
 //Progress bar function
-function handleProgress(){
-  const percent = (video.currentTime / video.duration) * 100
-  progressBar.style.flexBasis = `${percent}%`
+function handleProgress() {
+  const percent = (video.currentTime / video.duration) * 100;
+  progressBar.style.flexBasis = `${percent}%`;
+}
+
+//Video scrubber
+function scrub(event) {
+  const scrubTime = (event.offsetX / progress.offsetWidth) * video.duration;
+  video.currentTime = scrubTime;
+  console.log(event);
 }
 
 //Event Listeners
@@ -56,10 +63,18 @@ toggle.addEventListener("click", togglePlay);
 
 skipButtons.forEach((button) => button.addEventListener("click", skip));
 
-ranges.forEach((range) => 
-  range.addEventListener("change", handleRangeUpdate)
-);
+ranges.forEach((range) => range.addEventListener("change", handleRangeUpdate));
 
 ranges.forEach((range) =>
   range.addEventListener("mousemove", handleRangeUpdate)
 );
+
+let mousedown = false;
+progress.addEventListener("click", scrub);
+progressBar.addEventListener("mousemove", (event) => {
+  if (mousedown) {
+    scrub(event);
+  }
+});
+progress.addEventListener("mousedown", () => (mousedown = true));
+progress.addEventListener("mouseup", () => (mousedown = false));
