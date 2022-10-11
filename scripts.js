@@ -27,6 +27,12 @@ function updateToggle() {
   }
 }
 
+function handleRangeUpdate() {
+  video[this.name] = this.value;
+  console.log(this.value);
+  console.log(this.name);
+}
+
 //Skip button function
 function skip() {
   console.log(this.dataset);
@@ -39,3 +45,9 @@ video.addEventListener("play", updateToggle);
 video.addEventListener("pause", updateToggle);
 toggle.addEventListener("click", togglePlay);
 skipButtons.forEach((button) => button.addEventListener("click", skip));
+ranges.forEach((range) => 
+  range.addEventListener("change", handleRangeUpdate)
+);
+ranges.forEach((range) =>
+  range.addEventListener("mousemove", handleRangeUpdate)
+);
