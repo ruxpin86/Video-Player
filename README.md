@@ -5,6 +5,7 @@
 - [Description](#description)
 - [Live Link](#live-link)
 - [Installation](#installation)
+- [Technoligies Used](#technologies-used)
 - [Questions](#questions)
 
 ## Description
@@ -20,6 +21,12 @@ https://ruxpin86.github.io/Video-Player/
 In the terminal or gitBash enter:
 
 `git clone https://github.com/ruxpin86/Video-Player.git`
+
+## Technologies Used
+
+- HTML
+- CSS
+- JavaScript
 
 ## Questions
 
