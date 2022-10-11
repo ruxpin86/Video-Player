@@ -8,3 +8,21 @@ const skipButtons = player.querySelector("[data-skip]");
 const ranges = player.querySelector(".player__slider");
 
 //Functions
+function togglePlay() {
+  if (video.paused) {
+    video.play();
+  } else {
+    video.pause();
+  }
+}
+
+function updateToggle() {
+  const icon = this.paused ? "►" : "❚ ❚";
+  toggle.textContent = icon;
+}
+
+//Event Listeners
+video.addEventListener("click", togglePlay);
+video.addEventListener("play", updateToggle);
+video.addEventListener("pause", updateToggle);
+toggle.addEventListener("click", togglePlay);
