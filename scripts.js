@@ -27,6 +27,7 @@ function updateToggle() {
   }
 }
 
+//Volume and playback speed sliders
 function handleRangeUpdate() {
   video[this.name] = this.value;
   console.log(this.value);
@@ -39,15 +40,26 @@ function skip() {
   video.currentTime += parseFloat(this.dataset.skip);
 }
 
+//Progress bar function
+function handleProgress(){
+  const percent = (video.currentTime / video.duration) * 100
+  progressBar.style.flexBasis = `${percent}%`
+}
+
 //Event Listeners
 video.addEventListener("click", togglePlay);
 video.addEventListener("play", updateToggle);
 video.addEventListener("pause", updateToggle);
+video.addEventListener("timeupdate", handleProgress);
+
 toggle.addEventListener("click", togglePlay);
+
 skipButtons.forEach((button) => button.addEventListener("click", skip));
+
 ranges.forEach((range) => 
   range.addEventListener("change", handleRangeUpdate)
 );
+
 ranges.forEach((range) =>
   range.addEventListener("mousemove", handleRangeUpdate)
 );
