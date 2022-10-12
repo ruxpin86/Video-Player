@@ -7,6 +7,7 @@ const toggle = player.querySelector(".toggle");
 const skipButtons = player.querySelectorAll("[data-skip]");
 const ranges = player.querySelectorAll(".player__slider");
 const fullScreen = player.querySelector(".full__screen");
+const mute = player.querySelector(".mute__button");
 
 //Functions
 
@@ -83,4 +84,10 @@ progress.addEventListener("mouseup", () => (mousedown = false));
 //Fullscreen button
 fullScreen.addEventListener("click", () => {
   video.requestFullscreen();
+});
+
+//Mute button
+mute.addEventListener("click", () => {
+  video.muted = !video.muted;
+  mute.classList.toggle("muted");
 });

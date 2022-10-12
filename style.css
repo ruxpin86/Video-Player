@@ -97,6 +97,7 @@ body {
   transition: height 0.3s;
   background: rgba(0,0,0,0.5);
   cursor: ew-resize;
+  border-radius: 0 0 3px 3px;
 }
 
 .progress__filled {
@@ -104,6 +105,38 @@ body {
   background: #009dff;
   flex: 0;
   flex-basis: 50%;
+}
+.mute__button {
+background: none;
+border: 0;
+line-height: 1;
+color: white;
+text-align: center;
+outline: 0;
+padding: 0;
+cursor: pointer;
+max-width: 50px;
+position: relative;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.mute__button.muted {
+  opacity: .5;
+}
+
+.mute__button .slash {
+  position: absolute;
+  width: 2px;
+  height: 50%;
+  background: red;
+  transform: rotate(-50deg);
+  display: none;
+}
+
+.mute__button.muted .slash{
+  display: block;
 }
 
 /* unholy css to style input type="range" */
