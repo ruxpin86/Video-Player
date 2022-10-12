@@ -10,7 +10,7 @@
 
 ## Description
 
-This was a good exercise in understanding how to utilize HTML video elements. My goal was to get a handle on how to use Javascript to imitate other video players I have seen throughout the web and implement features like: showing playback progress, scrubbing video, skipping incrementally by predetermined set amounts of time, playing and pausing video, controlling playback rate, and control playback volume within the browser window.
+This was a good exercise in understanding how to utilize HTML video elements. My goal was to get a handle on how to use Javascript and HTML to imitate other video players I have seen throughout the web and implement features like: showing playback progress, scrubbing video, skipping incrementally by predetermined set amounts of time, playing and pausing video, controlling playback rate, implementing fullscreen mode, and control volume/mute functions within the browser window. Enjoy the sweet surfing video trailer and mess with it a bit!
 
 ## Live Link
 

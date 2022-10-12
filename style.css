@@ -10,12 +10,24 @@ body {
   margin: 0;
   padding: 0;
   display: flex;
-  background: #0d1b2a;
   min-height: 100vh;
   background: linear-gradient(115deg, #0d1b2a 0%,#1d3557 48%,#8ecae6 100%);
-  background-size: cover;
+  background-size: 100% 100%;
   align-items: center;
   justify-content: center;
+  animation: change 10s ease-in-out infinite;
+}
+
+@keyframes change {
+  0% {
+    background-postion: 0 50%;
+  }
+  50% {
+    background-postion: 100% 50%;
+  }
+  100% {
+    background-postion: 0 50%;
+  }
 }
 
 .player {
