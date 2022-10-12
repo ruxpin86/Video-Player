@@ -53,6 +53,9 @@ function scrub(event) {
   console.log(event);
 }
 
+//Fullscreen funcion
+function fullScreen() {}
+
 //Event Listeners
 video.addEventListener("click", togglePlay);
 video.addEventListener("play", updateToggle);
